@@ -12,8 +12,10 @@ public class BankAccount {
     }
 
     public boolean withdraw(double amount) {
-        amount += 2;
-        return false;
+        amount += 2; //apply fee first
+        if (balance - amount < 50){return false;}
+        balance -= amount;
+        return true;
     }
     
     public String getAccountSummary() {
